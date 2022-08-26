@@ -45,10 +45,18 @@ Use to delete a unmerged branch.
 ### `-m <new name>` flag
 Use to rename current branch.
 
+### `-a` flag
+Use to list all branches in current repository, including remote tracking branches.
+
+### `-vv` flag
+Use to list all branches in current repository, including remote tracking branches and last commit message.  *Any remote branch that has been deleted will be marked as `gone`.*
+
+
+
 
 ---
 ## `git switch <branch name>`
-Use to start using the specified branch.
+Use to start using the specified branch, creating it if it doesn't exist.
 
 ---
 ## `git log`
@@ -118,8 +126,30 @@ Only the Object Database will have the files of the specified commit ID or `HEAD
 ### `--hard` flag
 Working Directory, Index, and Object Database all have files of the specified commit ID or `HEAD`.
 
-
 ---
 
 ## `git revert  <commit ID> | HEAD` arg
 Use to undo a commit by creating an "anti-commit"- a commit that introduced a set of changes that exact the specified commit while leaving the current commit intact.
+
+## `git clone <url> <directory name>` args
+Use to clone a repository from a remote location to a local directory.
+
+
+## `git push`
+Use to push local commits to a remote repository. Any commits that are pushed to a remote repository are considered "shared" commits.
+
+### `-u` flag
+Use to set the upstream branch for the current branch.  This lets you specify the name of the remote and the name of the branch you want to create in the remote repository.
+
+### `--force` flag
+Use to force push to a remote repository.  This is not recommended as it can cause issues with other developers.
+
+## `git pull`
+Use to fetch and merge changes from a remote repository.
+
+## `git fetch`
+Use to retrieve al new branches and commits from a remote repository, the nuipdates the remote tracking branches in the clone.  *The local branches are not updated.*
+
+### `-p` flag
+Use to delete remote tracking branches that no longer exist on the remote repository.
+
